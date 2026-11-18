@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://biwg6sb1x41xe" path="res://Assets/Player_Assets/Idle/pixil-frame-1.png" id="2_nlwbb"]
 [ext_resource type="Texture2D" uid="uid://dqa08uji8o6k" path="res://Assets/Player_Assets/Idle/pixil-frame-2.png" id="3_gaovw"]
 [ext_resource type="Texture2D" uid="uid://cnqd51in0wrgf" path="res://Assets/Player_Assets/Idle/pixil-frame-3.png" id="4_1uf5f"]
+[ext_resource type="PackedScene" uid="uid://8un0tnqkmnsn" path="res://Scenes/Player_Scenes/hand_player.tscn" id="6_gaovw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -37,6 +38,7 @@ sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.1134774
+flip_h = true
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=981222709]
 position = Vector2(-1, 1)
@@ -49,6 +51,9 @@ one_shot = true
 [node name="TimerNotDash" type="Timer" parent="." unique_id=840912350]
 wait_time = 1.5
 one_shot = true
+
+[node name="HandPlayer" parent="." unique_id=1289155513 instance=ExtResource("6_gaovw")]
+position = Vector2(18, 6)
 
 [connection signal="timeout" from="TimerDash" to="." method="_on_timer_dash_timeout"]
 [connection signal="timeout" from="TimerNotDash" to="." method="_on_timer_not_dash_timeout"]

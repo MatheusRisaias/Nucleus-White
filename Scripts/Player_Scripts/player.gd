@@ -17,7 +17,6 @@ func _process(delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	move_player()
 	move_and_slide()
-	print(_move_speed)
 	
 func move_player():
 	var direction = Input.get_vector("left_move","right_move","up_move","down_move")
@@ -28,9 +27,9 @@ func move_player():
 	#condição responsável para fazer o player virar
 	#com base de onde ele estiver olhando(posição do mouse
 	if mouse_position.x > global_position.x:
-		$Animacao.flip_h = true
-	else:
 		$Animacao.flip_h = false
+	else:
+		$Animacao.flip_h = true
 	
 	#dash
 	if Input.is_action_just_pressed("dash_move") and _can_dash:

@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://dovol2wlc6dt6"]
 
+[ext_resource type="Script" uid="uid://c0c78r2lc5env" path="res://Scripts/Arena_Scripts/arena.gd" id="1_1v1nj"]
 [ext_resource type="Texture2D" uid="uid://cth6iqy3vx7e" path="res://icon.svg" id="1_lq7nq"]
+[ext_resource type="PackedScene" uid="uid://8un0tnqkmnsn" path="res://Scenes/Player_Scenes/hand_player.tscn" id="2_kcpg1"]
 [ext_resource type="PackedScene" uid="uid://bvmiqyyh7d5yi" path="res://Scenes/Player_Scenes/player.tscn" id="2_ra5jo"]
 
 [node name="Arena" type="Node2D" unique_id=2050070621]
+script = ExtResource("1_1v1nj")
+armas = Array[PackedScene]([ExtResource("2_kcpg1"), ExtResource("2_ra5jo")])
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1098629105]
 position = Vector2(577, 370)

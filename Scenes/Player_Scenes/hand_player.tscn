@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://8un0tnqkmnsn"]
+
+[ext_resource type="Texture2D" uid="uid://bhwiy88mk7pyc" path="res://Assets/Player_Assets/hand.png" id="1_q314m"]
+[ext_resource type="Script" uid="uid://bj6yffmhwe6f3" path="res://Scripts/Player_Scripts/hand_player.gd" id="1_u7i4a"]
+
+[node name="HandPlayer" type="Node2D" unique_id=1289155513]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_u7i4a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=235824815]
+texture = ExtResource("1_q314m")
