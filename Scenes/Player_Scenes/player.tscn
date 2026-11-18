@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bvmiqyyh7d5yi"]
+
+[ext_resource type="Texture2D" uid="uid://7ymojw5e10ve" path="res://Assets/Player_Assets/Idle/pixil-frame-0.png" id="1_7o4sy"]
+[ext_resource type="Script" uid="uid://cwlax37dw66en" path="res://Scripts/Player_Scripts/player.gd" id="1_nlwbb"]
+[ext_resource type="Texture2D" uid="uid://biwg6sb1x41xe" path="res://Assets/Player_Assets/Idle/pixil-frame-1.png" id="2_nlwbb"]
+[ext_resource type="Texture2D" uid="uid://dqa08uji8o6k" path="res://Assets/Player_Assets/Idle/pixil-frame-2.png" id="3_gaovw"]
+[ext_resource type="Texture2D" uid="uid://cnqd51in0wrgf" path="res://Assets/Player_Assets/Idle/pixil-frame-3.png" id="4_1uf5f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7o4sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nlwbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gaovw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1uf5f")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjrm7"]
+radius = 9.0
+
+[node name="Player" type="CharacterBody2D" unique_id=789673704]
+script = ExtResource("1_nlwbb")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="." unique_id=1603629720]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.1134774
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=981222709]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_yjrm7")
+
+[node name="TimerDash" type="Timer" parent="." unique_id=1957456390]
+wait_time = 0.1
+one_shot = true
+
+[node name="TimerNotDash" type="Timer" parent="." unique_id=840912350]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="TimerDash" to="." method="_on_timer_dash_timeout"]
+[connection signal="timeout" from="TimerNotDash" to="." method="_on_timer_not_dash_timeout"]

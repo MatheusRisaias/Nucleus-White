@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dovol2wlc6dt6"]
+
+[ext_resource type="Texture2D" uid="uid://cth6iqy3vx7e" path="res://icon.svg" id="1_lq7nq"]
+[ext_resource type="PackedScene" uid="uid://bvmiqyyh7d5yi" path="res://Scenes/Player_Scenes/player.tscn" id="2_ra5jo"]
+
+[node name="Arena" type="Node2D" unique_id=2050070621]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1098629105]
+position = Vector2(577, 370)
+scale = Vector2(5.0859375, 2.9374998)
+texture = ExtResource("1_lq7nq")
+
+[node name="Player" parent="." unique_id=789673704 instance=ExtResource("2_ra5jo")]
+position = Vector2(575, 384)
