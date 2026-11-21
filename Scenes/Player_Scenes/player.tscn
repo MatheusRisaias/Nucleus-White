@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dqa08uji8o6k" path="res://Assets/Player_Assets/Idle/pixil-frame-2.png" id="3_gaovw"]
 [ext_resource type="Texture2D" uid="uid://cnqd51in0wrgf" path="res://Assets/Player_Assets/Idle/pixil-frame-3.png" id="4_1uf5f"]
 [ext_resource type="PackedScene" uid="uid://8un0tnqkmnsn" path="res://Scenes/Player_Scenes/hand_player.tscn" id="6_gaovw"]
+[ext_resource type="PackedScene" uid="uid://v55jld88la26" path="res://Scenes/Guns/gun_1.tscn" id="7_1uf5f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -54,6 +55,9 @@ one_shot = true
 
 [node name="HandPlayer" parent="." unique_id=1289155513 instance=ExtResource("6_gaovw")]
 position = Vector2(18, 6)
+
+[node name="Gun_1" parent="." unique_id=2026622597 instance=ExtResource("7_1uf5f")]
+position = Vector2(32, 0)
 
 [connection signal="timeout" from="TimerDash" to="." method="_on_timer_dash_timeout"]
 [connection signal="timeout" from="TimerNotDash" to="." method="_on_timer_not_dash_timeout"]

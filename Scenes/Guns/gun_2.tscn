@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://djx0x3c2low75"]
+
+[ext_resource type="Script" uid="uid://dxmolx7qha84b" path="res://Scripts/Guns_Scripts/gun_2.gd" id="1_y58y3"]
+[ext_resource type="Texture2D" uid="uid://xi1fcv1vfxqi" path="res://Assets/Guns_Assets/Gun_1_Assets/Free - Gun.png" id="2_2o8wv"]
+
+[node name="Gun_2" type="Node2D" unique_id=2026622597]
+script = ExtResource("1_y58y3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=304148951]
+modulate = Color(0, 1, 0, 1)
+texture = ExtResource("2_2o8wv")
+
+[node name="PosShoot" type="Marker2D" parent="." unique_id=1772665418]
+position = Vector2(15, 0)

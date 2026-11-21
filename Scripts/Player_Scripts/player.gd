@@ -17,7 +17,11 @@ func _process(delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	move_player()
 	move_and_slide()
-	
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("shoot"):
+		get_node("Gun_1").shoot()
+
 func move_player():
 	var direction = Input.get_vector("left_move","right_move","up_move","down_move")
 	velocity = direction * _move_speed

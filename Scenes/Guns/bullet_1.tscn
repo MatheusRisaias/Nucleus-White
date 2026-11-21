@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://283kmwoj73nb"]
+
+[ext_resource type="Texture2D" uid="uid://rpwt5npn1um7" path="res://Assets/Guns_Assets/Bullets.png" id="1_jfy2u"]
+[ext_resource type="Script" uid="uid://dkuynuc0rrcmv" path="res://Scripts/Guns_Scripts/bullet_1.gd" id="1_xglca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1klc"]
+atlas = ExtResource("1_jfy2u")
+region = Rect2(241, 83, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77js5"]
+atlas = ExtResource("1_jfy2u")
+region = Rect2(224, 83, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy213"]
+atlas = ExtResource("1_jfy2u")
+region = Rect2(207, 83, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1klc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77js5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy213")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(14, 9)
+
+[node name="Bullet_1" type="CharacterBody2D" unique_id=764466740]
+script = ExtResource("1_xglca")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2035980721]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+frame = 2
+frame_progress = 0.8405625
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=491917291]
+position = Vector2(-2, 0.5)
+shape = SubResource("RectangleShape2D_g4v7s")
